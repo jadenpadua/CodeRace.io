@@ -4,7 +4,6 @@ CodeRace.io is a unique type racing application where users will type out coding
 ## Installation
 
 Step 1: Clone or download the repository
-Cloning: git clone https://github.com/jadenpadua/CodeRace.io.git
 
 Step 2: in root
 ``` 
