@@ -7,6 +7,7 @@ Step 1: Clone or download the repository
 
 Step 2: in root
 ``` 
+cd CodeRace.io
 cd client
 npm install
 npm start
