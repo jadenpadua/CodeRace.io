@@ -7,8 +7,6 @@ Step 1: Clone or download the repository
 
 Step 2: in root
 ``` 
-npm install -g create-react-app
-npx create-react-app code-race
 cd client
 npm install
 npm start
