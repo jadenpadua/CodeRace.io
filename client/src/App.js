@@ -6,12 +6,16 @@ import Speed from './Speed';
 // Parent app Component
 const App = () =>  {
 // Stores arr with direct variable reference, method to modify that reference
-const [text,setText] = useState('System.out.println("Hello World";')
-const [userInput,setUserInput] = useState("")  
+const [text,setText] = useState('React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.')
+const [userInput,setUserInput] = useState("")
+const [symbols,setSymbols] = useState(0)
+const [challengeStarted, setStart] = useState(false);
+const [startTime, setStartTime] = useState(new Date())
+const [timeElapsed, setElapsedTime] = useState(new Date())
 
 // onRestart is a const calls the setText and setUsermethod, thus resetting to original state.
   const onRestart = () => {
-    setText('System.out.println("Hello World";')
+    setText('System.out.println("Hello World");')
     setUserInput("")
   }
 // this const is equal to an arrow function that updates our events and sets user input to that
@@ -19,11 +23,25 @@ const [userInput,setUserInput] = useState("")
     const v = e.target.value;
     setUserInput(v)
 
+    setSymbols(countCorrectSymbols(v))
+    if (!challengeStarted) {
+      setStart(true)
+      setStartTime(new Date())
+    }
+    if(challengeStarted) {
+      setElapsedTime(new Date() - startTime)
+    }
   }
-// For later use with API calls
-useEffect( () => {
 
-}, [])
+  const countCorrectSymbols = (userInput) => {
+// // // Parse text and remove white space
+     const parsedText = text.replace(' ','')
+     return userInput.replace( ' ', '').split('').filter((s,i) => s === parsedText[i]).length;
+  }
+// // For later use with API calls
+// useEffect( () => {
+
+// }, [])
 
 // Return JSX
 return(
@@ -44,7 +62,7 @@ return(
               placeholder="Start Typing..."
             ></textarea>
 {/* Speed Component*/}
-            <Speed/>
+            <Speed timeElapsed={timeElapsed} symbols={symbols}/>
 
             <div className="text-right">
 {/* Restart button on click event sets state to initial state*/}

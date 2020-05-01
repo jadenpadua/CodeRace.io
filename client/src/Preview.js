@@ -13,7 +13,7 @@ import React from 'react';
           let color;
 // only if our index is less than our text length
           if (i < props.userInput.length) {
-// color dependent on if our character in text is equal to userInput of index i
+// olor dependent on if our character in text is equal to userInput of index i
             color = s === props.userInput[i] ? '#dfffa0' : '#fcbea4';
           }
 // Now return that specific index of s in the text, either green or red
