@@ -2,20 +2,18 @@
 import React, {useState, useEffect} from 'react';
 import Preview from './Preview';
 import Speed from './Speed';
-
+import {content} from './content';
 // Parent app Component
 const App = () =>  {
 // Stores arr with direct variable reference, method to modify that reference
-const [text,setText] = useState('React has been designed from the start for gradual adoption, and you can use as little or as much React as you need. Whether you want to get a taste of React, add some interactivity to a simple HTML page, or start a complex React-powered app, the links in this section will help you get started.')
+const [text,setText] = useState(content.text[0])
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
-const [challengeStarted, setStart] = useState(false);
-const [startTime, setStartTime] = useState(new Date())
-const [timeElapsed, setElapsedTime] = useState(new Date())
+const [timeElapsed, setElapsedTime] = useState(0)
 
 // onRestart is a const calls the setText and setUsermethod, thus resetting to original state.
   const onRestart = () => {
-    setText('System.out.println("Hello World");')
+    setText(content.text[0])
     setUserInput("")
   }
 // this const is equal to an arrow function that updates our events and sets user input to that
@@ -24,12 +22,9 @@ const [timeElapsed, setElapsedTime] = useState(new Date())
     setUserInput(v)
 
     setSymbols(countCorrectSymbols(v))
-    if (!challengeStarted) {
-      setStart(true)
-      setStartTime(new Date())
-    }
-    if(challengeStarted) {
-      setElapsedTime(new Date() - startTime)
+
+    if (userInput.length === 1) {
+      setElapsedTime(0)
     }
   }
 
@@ -39,9 +34,15 @@ const [timeElapsed, setElapsedTime] = useState(new Date())
      return userInput.replace( ' ', '').split('').filter((s,i) => s === parsedText[i]).length;
   }
 // // For later use with API calls
-// useEffect( () => {
+ useEffect( () => {
 
-// }, [])
+  const interval = setInterval(() => {
+    setElapsedTime(timeElapsed => 1000 + timeElapsed)
+    console.log(timeElapsed)
+  }, 1000);
+
+  return () => clearInterval(interval);
+}, []);
 
 // Return JSX
 return(

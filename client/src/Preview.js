@@ -16,6 +16,10 @@ import React from 'react';
 // olor dependent on if our character in text is equal to userInput of index i
             color = s === props.userInput[i] ? '#dfffa0' : '#fcbea4';
           }
+          console.log("Hello")
+          // if (s === "`") {
+          //   console.log("Found")
+          // }
 // Now return that specific index of s in the text, either green or red
           return <span key={i} style={{backgroundColor: color}}>{s}</span>
         })
