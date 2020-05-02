@@ -2,8 +2,16 @@
 import React from 'react';
 // Preview comp getting props passed in by App.js
  const Preview = (props) => {
+
+  if (props.userInput.length >= props.text.length) {
+    return (
+      <div>You won</div>
+    )
+  }
 //Split text passed in
   const text = props.text.split('');
+
+
 // Return JSX object
   return (
     <div className="border rounded p-3 mb-4">
@@ -16,7 +24,7 @@ import React from 'react';
 // olor dependent on if our character in text is equal to userInput of index i
             color = s === props.userInput[i] ? '#dfffa0' : '#fcbea4';
           }
-          console.log("Hello")
+          
           // if (s === "`") {
           //   console.log("Found")
           // }

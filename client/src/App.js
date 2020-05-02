@@ -4,20 +4,28 @@ import Preview from './Preview';
 import Speed from './Speed';
 import {content} from './content';
 // Parent app Component
+
 const App = () =>  {
 // Stores arr with direct variable reference, method to modify that reference
-const [text,setText] = useState(content.text[0])
+const [text,setText] = useState(content.text3)
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
+const [isFinished, setisFinished] = useState(false)
 
 // onRestart is a const calls the setText and setUsermethod, thus resetting to original state.
   const onRestart = () => {
-    setText(content.text[0])
+    setText(content.text2)
     setUserInput("")
   }
+
 // this const is equal to an arrow function that updates our events and sets user input to that
   const onUserInputChange = (e) => {
+
+    if (userInput.length >= text.length - 1) {
+      setisFinished(true)
+    }
+
     const v = e.target.value;
     setUserInput(v)
 
@@ -28,6 +36,7 @@ const [timeElapsed, setElapsedTime] = useState(0)
     }
   }
 
+
   const countCorrectSymbols = (userInput) => {
 // // // Parse text and remove white space
      const parsedText = text.replace(' ','')
@@ -35,15 +44,24 @@ const [timeElapsed, setElapsedTime] = useState(0)
   }
 // // For later use with API calls
  useEffect( () => {
+    const interval = setInterval(() => {
 
-  const interval = setInterval(() => {
-    setElapsedTime(timeElapsed => 1000 + timeElapsed)
-    console.log(timeElapsed)
-  }, 1000);
+      if(isFinished) {
+        console.log(timeElapsed)
+      }
+      else {
+      setElapsedTime(timeElapsed => 1000 + timeElapsed)
+      }
+    }, 1000);
+  
+    return () => clearInterval(interval);
+}, [isFinished]);
 
-  return () => clearInterval(interval);
-}, []);
 
+
+// useEffect(() => {
+
+// }
 // Return JSX
 return(
 /* Designating spot in webpage to place our information*/
