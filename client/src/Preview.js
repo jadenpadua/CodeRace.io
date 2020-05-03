@@ -14,7 +14,7 @@ import React from 'react';
 
 // Return JSX object
   return (
-    <div className="border rounded p-3 mb-4">
+    <div style={{backgroundColor:'black', color:'white'}}className="border rounded p-3 mb-4">
       {
 // Map an index to every s (character) in string
         text.map((s,i) => {
@@ -29,7 +29,7 @@ import React from 'react';
           //   console.log("Found")
           // }
 // Now return that specific index of s in the text, either green or red
-          return <span key={i} style={{backgroundColor: color}}>{s}</span>
+          return <span key={i} style={{color: color}}>{s}</span>
         })
       }
     </div>

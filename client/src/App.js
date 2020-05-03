@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import Preview from './Preview';
 import Speed from './Speed';
 import {content} from './content';
+import './index.css'; 
 // Parent app Component
 
 const App = () =>  {
@@ -13,6 +14,18 @@ const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
 const [isFinished, setisFinished] = useState(false)
 
+const inputStyleStart = {
+  backgroundColor: 'black',
+  color: 'white',
+
+}
+
+const inputStyleWin = {
+  backgroundColor: 'black',
+  color: '#dfffa0'
+}
+const [inputStyle, setInputStyle] = useState(inputStyleStart)
+
 // onRestart is a const calls the setText and setUsermethod, thus resetting to original state.
   const onRestart = () => {
     setText(content.text2)
@@ -21,21 +34,24 @@ const [isFinished, setisFinished] = useState(false)
 
 // this const is equal to an arrow function that updates our events and sets user input to that
   const onUserInputChange = (e) => {
-
     if (userInput.length >= text.length - 1) {
       setisFinished(true)
+      setInputStyle(inputStyleWin)
     }
 
     const v = e.target.value;
+    setSymbols(countCorrectSymbols(v))
+
     setUserInput(v)
 
-    setSymbols(countCorrectSymbols(v))
+ 
 
     if (userInput.length === 1) {
       setElapsedTime(0)
     }
   }
 
+ 
 
   const countCorrectSymbols = (userInput) => {
 // // // Parse text and remove white space
@@ -47,7 +63,6 @@ const [isFinished, setisFinished] = useState(false)
     const interval = setInterval(() => {
 
       if(isFinished) {
-        console.log(timeElapsed)
       }
       else {
       setElapsedTime(timeElapsed => 1000 + timeElapsed)
@@ -74,12 +89,14 @@ return(
 {/* Preview component with parameters text, and userInput, can use direct reference here*/}
             <Preview text={text} userInput={userInput}/>
 {/* Define area box where you start typing, set value to input of user and change user input to target value of event*/}
-            <textarea
+
+             <textarea
+              style = {inputStyle}
               value={userInput}
               onChange={onUserInputChange}
               className="form-control mb-3"
               placeholder="Start Typing..."
-            ></textarea>
+            ></textarea> 
 {/* Speed Component*/}
             <Speed timeElapsed={timeElapsed} symbols={symbols}/>
 
