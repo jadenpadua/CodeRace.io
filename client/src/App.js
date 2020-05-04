@@ -1,4 +1,5 @@
 // Neccessary component imports
+import Input from './Input';
 import React, {useState, useEffect} from 'react';
 import Preview from './Preview';
 import Speed from './Speed';
@@ -22,7 +23,8 @@ const inputStyleStart = {
 
 const inputStyleWin = {
   backgroundColor: 'black',
-  color: '#dfffa0'
+  color: '#dfffa0',
+  disabled: true
 }
 const [inputStyle, setInputStyle] = useState(inputStyleStart)
 
@@ -84,15 +86,19 @@ return(
       
 {/* Box for holding text field and form box*/}
         <div className="row">
+        <img src={ require('./img.png') } />
 {/* Text field for our designated phrase */}
           <div className="col-md-6 offset-md-3">
+         
 {/* Preview component with parameters text, and userInput, can use direct reference here*/}
             <Preview text={text} userInput={userInput}/>
 {/* Define area box where you start typing, set value to input of user and change user input to target value of event*/}
+            {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
+
 
              <textarea
               style = {inputStyle}
-              value={userInput}
+              value={userInput} 
               onChange={onUserInputChange}
               className="form-control mb-3"
               placeholder="Start Typing..."
