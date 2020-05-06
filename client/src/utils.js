@@ -1,4 +1,5 @@
 export const content = {
+    test: "Hello this is a string",
     text1: "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”. React has a few different kinds of components, but we'll start with React.Component subclasses: class ShoppingList extends React.",
     text2: "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. ... Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse.",
     text3: "Java is a programming language and computing platform first released by Sun Microsystems in 1995. ... Java is fast, secure, and reliable. From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, Java is everywhere! People also ask",
@@ -16,8 +17,19 @@ export const inputStyleStart = {
     color: 'white',
 }
   
-export const inputStyleWin = {
+export let inputStyleWin = {
     backgroundColor: 'black',
     color: '#dfffa0',
     disabled: true
 }
+
+export const countCorrectSymbols = (userInput,text) => {
+    const parsedText = text.replace(' ','')
+    return userInput.replace( ' ', '').split('').filter((s,i) => s === parsedText[i]).length;
+ }
+ 
+ export const textArea = {
+
+ }
+ 
+ 

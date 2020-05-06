@@ -3,12 +3,12 @@
 import React, {useState, useEffect} from 'react';
 import Preview from './components/Preview';
 import Speed from './components/Speed';
-import {content, randomProperty, inputStyleStart, inputStyleWin} from './utils.js';
+import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
 
 const App = () =>  {
 
-const [text,setText] = useState(randomProperty(content))
+const [text,setText] = useState(content.test)
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
@@ -18,29 +18,36 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
   const onRestart = () => {
     setText(randomProperty(content))
     setUserInput("")
+    setSymbols(0)
+    setElapsedTime(0)
   }
-  
+
   const onUserInputChange = (e) => {
-    if (userInput.length >= text.length - 1) {
+
+    if (userInput.length < text.length-1) {
+      const v = e.target.value;
+      setUserInput(v)
+      setSymbols(countCorrectSymbols(v,text))
+
+      if (userInput.length+1 === 1) {
+        console.log("Hello")
+        setElapsedTime(0)
+      }
+    }
+
+    else {
+      if(userInput.length === text.length-1) {
+        const v = e.target.value
+        setUserInput(v)
+      } 
+      const v = e.target.value
       setisFinished(true)
       setInputStyle(inputStyleWin)
+      setSymbols(countCorrectSymbols(v,text))
     }
-    const v = e.target.value;
-    setSymbols(countCorrectSymbols(v))
 
-    setUserInput(v)
-
-    if (userInput.length === 1) {
-      setElapsedTime(0)
-    }
   }
-
-  const countCorrectSymbols = (userInput) => {
-
-     const parsedText = text.replace(' ','')
-     return userInput.replace( ' ', '').split('').filter((s,i) => s === parsedText[i]).length;
-  }
-
+  
  useEffect( () => {
     const interval = setInterval(() => {
       if(isFinished) {}
