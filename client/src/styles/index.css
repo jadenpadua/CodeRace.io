@@ -1,6 +1,5 @@
 ::placeholder {
     font-size: 1.2em;
- 
   }
 
   img {
@@ -10,16 +9,20 @@
   }
 
 
-  .border.rounded.p-3.mb-4 {
+  .border.rounded.border-primary.p-3.mb-4 {
     border-radius: 200px 200px 200px 200px;
     -moz-border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
     border: 0px solid #000000;
+    background-color: #ffffff;
   }
 
-body {
-  background-color: #e2fcff;
-  font-family: monospace;
-  font-size: 16px;
-}
+  body {
+    background-color: #e2fcff;
+    font-family: monospace;
+    font-size: 16px;
+  }
  
+  .btn.btn-light {
+    background-color: #eda5ff;
+  }
