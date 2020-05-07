@@ -13,13 +13,13 @@ export let randomProperty = function (obj) {
 };
 
 export const inputStyleStart = {
-    backgroundColor: 'black',
-    color: 'white',
+    backgroundColor: '#000000',
+    color: '#57fed5'
 }
   
 export let inputStyleWin = {
     backgroundColor: 'black',
-    color: '#dfffa0',
+    color: '#57fed5',
     disabled: true
 }
 
