@@ -1,6 +1,5 @@
 ::placeholder {
-    font-size: 1.2em;
- 
+    font-size: 16px;
   }
 
   img {
@@ -15,7 +14,22 @@
     -moz-border-radius: 200px 200px 200px 200px;
     -webkit-border-radius: 200px 200px 200px 200px;
     border: 0px solid #000000;
+    background-color: #ffffff;
   }
 
-
+  body {
+    background-color: #e2fcff;
+    font-family: monospace;
+    font-size: 16px;
+  }
  
+  .btn.btn-light {
+    background-color: #eda5ff;
+  }
+
+  .form-control, .form-control:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    outline-offset: 0px;
+  }

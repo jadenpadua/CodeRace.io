@@ -20,6 +20,7 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
     setUserInput("")
     setSymbols(0)
     setElapsedTime(0)
+    setisFinished(false)
   }
 
   const onUserInputChange = (e) => {
