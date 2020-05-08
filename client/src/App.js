@@ -72,7 +72,7 @@ return(
               style = {inputStyle}
               value={userInput} 
               onChange={onUserInputChange}
-              className="form-control mb-3"
+              className="form-control p-3 mb-3"
               placeholder="Start Typing..."
             ></TextareaAutosize> 
             <Speed timeElapsed={timeElapsed} symbols={symbols}/>
