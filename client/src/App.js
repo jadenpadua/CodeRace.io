@@ -1,6 +1,7 @@
 
 // import Input from './components/Input';
 import React, {useState, useEffect} from 'react';
+import TextareaAutosize from 'react-autosize-textarea';
 import Preview from './components/Preview';
 import Speed from './components/Speed';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
@@ -67,13 +68,13 @@ return(
           <div className="col-md-6 offset-md-3">
             <Preview text={text} userInput={userInput}/>
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
-             <textarea
+             <TextareaAutosize
               style = {inputStyle}
               value={userInput} 
               onChange={onUserInputChange}
               className="form-control mb-3"
               placeholder="Start Typing..."
-            ></textarea> 
+            ></TextareaAutosize> 
             <Speed timeElapsed={timeElapsed} symbols={symbols}/>
             <div className="text-right">
               <button className="btn btn-light" onClick={onRestart}>Restart</button>
