@@ -62,7 +62,8 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
 return(
       <div className="container mt-5 mb-5">
         <div className="row">
-        <img src={ require('./assets/title.png') } alt="Title" />
+        {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
+          <h1>CodeRace.io</h1>
           <div className="col-md-6 offset-md-3">
             <Preview text={text} userInput={userInput}/>
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}

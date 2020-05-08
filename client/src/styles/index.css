@@ -1,11 +1,18 @@
 ::placeholder {
     font-size: 16px;
+    color: white;
   }
 
   img {
     margin: auto;
     width: 30%;
     padding: 15px;
+  }
+
+  h1 {
+    margin: auto;
+    color: #37006d;
+    font-size: 56px;
   }
 
 

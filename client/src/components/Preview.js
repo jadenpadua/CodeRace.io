@@ -12,7 +12,7 @@ const Preview = (props) => {
   const text = props.text.split('');
 
   return (
-    <div className="border rounded border-primary p-3 mb-4">
+    <div className="border rounded p-3 mb-4">
       {
         text.map((s,i) => {
           let color;
