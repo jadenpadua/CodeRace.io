@@ -25,24 +25,26 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
   }
 
   const onUserInputChange = (e) => {
-
-    if (userInput.length < text.length-1) {
+    console.log(symbols)
+    console.log(text.length)
+    if (symbols + 2 < text.length) {
       const v = e.target.value;
       setUserInput(v)
       setSymbols(countCorrectSymbols(v,text))
 
       if (userInput.length+1 === 1) {
-        console.log("Hello")
         setElapsedTime(0)
       }
     }
 
     else {
-      if(userInput.length === text.length-1) {
+      if(symbols + 2 === text.length) {
+ 
         const v = e.target.value
         setUserInput(v)
-      } 
-      const v = e.target.value
+      }
+
+      const v = e.target.value;
       setisFinished(true)
       setInputStyle(inputStyleWin)
       setSymbols(countCorrectSymbols(v,text))
@@ -66,7 +68,7 @@ return(
         {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
           <h1>CodeRace.io</h1>
           <div className="col-md-6 offset-md-3">
-            <Preview text={text} userInput={userInput}/>
+            <Preview text={text} userInput={userInput} symbols={symbols}/>
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
              <TextareaAutosize
               style = {inputStyle}
