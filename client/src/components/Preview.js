@@ -4,7 +4,9 @@ import '.././styles/index.css';
 
 const Preview = (props) => {
 
-  if (props.userInput.length >= props.text.length) {
+  if (props.symbols + 1 === props.text.length) {
+    // console.log(props.text.length)
+    // console.log(props.symbols)
     return (
       <div>You won</div>
     )
