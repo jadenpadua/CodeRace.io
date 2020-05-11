@@ -9,12 +9,24 @@ import './styles/index.css';
 
 const App = () =>  {
 
-const [text,setText] = useState(content.test)
+const placeholder = "def search(arr,x):*`for i in range(len(arr)):*``if arr[i] == x:*```return i*`return -1"
+const [text,setText] = useState(placeholder)
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
 const [isFinished, setisFinished] = useState(false)
 const [inputStyle, setInputStyle] = useState(inputStyleStart)
+
+
+// const parsePlaceholder = () => {
+//   for (let i = 0; i < placeholder.length; i++ ) {
+//     console.log(placeholder[i])
+//   }
+// }
+
+// if (text === placeholder) {
+//   parsePlaceholder()
+// }
 
   const onRestart = () => {
     setText(randomProperty(content))
@@ -51,6 +63,8 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
     }
 
   }
+
+
   
  useEffect( () => {
     const interval = setInterval(() => {
@@ -61,6 +75,16 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
     }, 1000);
     return () => clearInterval(interval);
 }, [isFinished]);
+
+useEffect( () => {
+  let nt = text.split('*').join('\n')
+  let nt2 = nt.split('`').join("    ")
+
+  setText(nt2)
+
+}, []);
+
+
 
 return(
       <div className="container mt-5 mb-5">

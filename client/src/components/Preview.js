@@ -21,7 +21,7 @@ const Preview = (props) => {
           if (i < props.userInput.length) {
             color = s === props.userInput[i] ? '#4cf2c9' : '#eda5ff';
           }
-          return <span key={i} style={{backgroundColor: color}}>{s}</span>
+          return <span key={i} style={{backgroundColor: color, whiteSpace: "pre-wrap"}}>{s}</span>
         })
       }
     </div>
