@@ -9,8 +9,7 @@ import './styles/index.css';
 
 const App = () =>  {
 
-const placeholder = "struct ListNode* midNode(struct ListNode* head) {$`struct ListNode *fast = head, *slow = head; $`while (fast && fast->next) { $``fast = fast->next->next;$``slow = slow->next;$`}$`return slow;$}"
-const [text,setText] = useState(placeholder)
+const [text,setText] = useState(randomProperty(content))
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
@@ -26,8 +25,6 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
   }
 
   const onUserInputChange = (e) => {
-    console.log(symbols)
-    console.log(text.length)
     if (symbols + 2 < text.length) {
       const v = e.target.value;
       setUserInput(v)
