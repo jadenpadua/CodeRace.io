@@ -9,24 +9,13 @@ import './styles/index.css';
 
 const App = () =>  {
 
-const placeholder = "def search(arr,x):*`for i in range(len(arr)):*``if arr[i] == x:*```return i*`return -1"
+const placeholder = "struct ListNode* midNode(struct ListNode* head) {$`struct ListNode *fast = head, *slow = head; $`while (fast && fast->next) { $``fast = fast->next->next;$``slow = slow->next;$`}$`return slow;$}"
 const [text,setText] = useState(placeholder)
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
 const [isFinished, setisFinished] = useState(false)
 const [inputStyle, setInputStyle] = useState(inputStyleStart)
-
-
-// const parsePlaceholder = () => {
-//   for (let i = 0; i < placeholder.length; i++ ) {
-//     console.log(placeholder[i])
-//   }
-// }
-
-// if (text === placeholder) {
-//   parsePlaceholder()
-// }
 
   const onRestart = () => {
     setText(randomProperty(content))
@@ -77,12 +66,12 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
 }, [isFinished]);
 
 useEffect( () => {
-  let nt = text.split('*').join('\n')
+  let nt = text.split('$').join('\n')
   let nt2 = nt.split('`').join("    ")
 
   setText(nt2)
 
-}, []);
+}, [text]);
 
 
 

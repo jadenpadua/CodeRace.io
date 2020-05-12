@@ -1,10 +1,8 @@
 export const content = {
-    test: "Hello this is a string let us test this text",
-    text1: "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”. React has a few different kinds of components, but we'll start with React.Component subclasses: class ShoppingList extends React.",
-    text2: "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. ... Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse.",
-    text3: "Java is a programming language and computing platform first released by Sun Microsystems in 1995. ... Java is fast, secure, and reliable. From laptops to datacenters, game consoles to scientific supercomputers, cell phones to the Internet, Java is everywhere! People also ask",
-    text4: "C is a computer programming language. ... C is what is called a compiled language. This means that once you write your C program, you must run it through a C compiler to turn your program into an executable that the computer can run (execute).",
-    text5: "Go is a statically typed, compiled programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. Go is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency. The language is often referred to as GoLang because of its domain name"
+    text1: "def linearSearch(arr,x):$`for i in range(len(arr)):$``if arr[i] == x:$```return i$`return -1",
+    text2: "int binarySearch(int arr[], int x) {$`int left = 0;$`int right = arr.length - 1;$`while (left <= right) {$``int mid = left + (right = left) / 2;$``if (arr[mid] == x) {$``` return mid;$``}$``else if (arr[mid] > x) {$``` right = mid - 1;$``}$``else {$```left = mid + 1;$``}$`return -1;",
+    text3: "vector <int> twoSum(vector<int> & nums, int x) {$`unordered_map<int, int> hash;$`vector<int>result;$`for (int i = 0; i < nums.size(); i++) {$``int potentialMatch = x - nums[i];$``auto it = hash.find(potentialMatch);$``if (it != hash.end()) {$```res.push_pack(it->second);$```res.push_back(i);$```return res;$``}$``hash[nums[i]] = i;$`}$'`return res;$}",
+    text4: "function reverseString(str) {$`let newString = \"\";$`for (let i = str.length - 1; i >= 0; i--) {$`` newString += str[i];$`}$`return newString;"
 }
 
 export let randomProperty = function (obj) {
