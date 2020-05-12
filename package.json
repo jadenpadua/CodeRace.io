@@ -1,0 +1,29 @@
+{
+  "name": "coderace.io",
+  "version": "1.0.0",
+  "description": "CodeRace.io is a unique type racing application where users will type out coding algorithms and data structures  for an LPM score (Lines of code per minute). Strengthen your language syntax, improve your algorithmic knowledge, or just have some fun with friends. Join the race to become a better coder now!",
+  "main": "server.js",
+  "dependencies": {
+    "autosize": "^4.0.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "react-autosize-textarea": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadenpadua/CodeRace.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jadenpadua/CodeRace.io/issues"
+  },
+  "homepage": "https://github.com/jadenpadua/CodeRace.io#readme"
+}
