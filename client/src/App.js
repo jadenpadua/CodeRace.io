@@ -8,13 +8,19 @@ import Speed from './components/Speed';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
 
-const App = () =>  {
-  initializeAnalytics()
 
-function initializeAnalytics() {
-  ReactGA.initialize("UA-143281544-1")
-  ReactGA,pageview("./HomePage")
+
+function initializeReactGA() {
+  ReactGA.initialize('UA-143281544-1');
+  ReactGA.pageview('/homepage');
 }
+
+
+const App = () =>  {
+
+initializeReactGA()
+
+
 
 
 const [text,setText] = useState(randomProperty(content))
