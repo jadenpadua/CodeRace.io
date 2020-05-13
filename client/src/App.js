@@ -15,10 +15,11 @@ function initializeReactGA() {
   ReactGA.pageview('/homepage');
 }
 
+initializeReactGA()
 
 const App = () =>  {
 
-initializeReactGA()
+
 
 
 
