@@ -11,7 +11,7 @@ import './styles/index.css';
 
 
 function initializeReactGA() {
-  ReactGA.initialize('UA-143281544-1');
+  ReactGA.initialize('UA-166307178-1');
   ReactGA.pageview('/homepage');
 }
 
