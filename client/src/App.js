@@ -1,6 +1,7 @@
 
 // import Input from './components/Input';
 import React, {useState, useEffect} from 'react';
+import ReactGA from 'react-ga';
 import TextareaAutosize from 'react-autosize-textarea';
 import Preview from './components/Preview';
 import Speed from './components/Speed';
@@ -8,6 +9,13 @@ import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSym
 import './styles/index.css'; 
 
 const App = () =>  {
+  initializeAnalytics()
+
+function initializeAnalytics() {
+  ReactGA.initialize("UA-143281544-1")
+  ReactGA,pageview("./HomePage")
+}
+
 
 const [text,setText] = useState(randomProperty(content))
 const [userInput,setUserInput] = useState("")
