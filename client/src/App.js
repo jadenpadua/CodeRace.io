@@ -9,7 +9,7 @@ import './styles/index.css';
 
 const App = () =>  {
 
-const [text,setText] = useState("hello heroku")
+const [text,setText] = useState(randomProperty(content))
 const [userInput,setUserInput] = useState("")
 const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
