@@ -8,21 +8,13 @@ import Speed from './components/Speed';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
 
-
-
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
   ReactGA.pageview('/homepage');
 }
-
 initializeReactGA()
 
 const App = () =>  {
-
-
-
-
-
 
 const [text,setText] = useState(randomProperty(content))
 const [userInput,setUserInput] = useState("")
@@ -30,6 +22,7 @@ const [symbols,setSymbols] = useState(0)
 const [timeElapsed, setElapsedTime] = useState(0)
 const [isFinished, setisFinished] = useState(false)
 const [inputStyle, setInputStyle] = useState(inputStyleStart)
+const TAB_EVENT = 9
 
   const onRestart = () => {
     setText(randomProperty(content))
@@ -39,53 +32,60 @@ const [inputStyle, setInputStyle] = useState(inputStyleStart)
     setisFinished(false)
   }
 
+  const errorHandling = (e) => {
+    e.preventDefault();
+    e.nativeEvent.stopImmediatePropagation();
+  }
+
   const onUserInputChange = (e) => {
     if (symbols + 2 < text.length) {
-      const v = e.target.value;
+      if (e.keyCode !== TAB_EVENT) {
+        const v = e.target.value;
+        setUserInput(v)
+        setSymbols(countCorrectSymbols(v,text))
+          if (userInput.length+1 === 1) {
+            setElapsedTime(0)
+          }
+      }
+    else {
+      e.preventDefault();
+      const v = userInput + "    "
       setUserInput(v)
       setSymbols(countCorrectSymbols(v,text))
-
-      if (userInput.length+1 === 1) {
-        setElapsedTime(0)
-      }
+      console.log(userInput.length)
+        if (userInput.length === 0) {
+          setElapsedTime(0)
+        }
+    }
     }
 
     else {
       if(symbols + 2 === text.length) {
- 
         const v = e.target.value
         setUserInput(v)
       }
-
       const v = e.target.value;
       setisFinished(true)
       setInputStyle(inputStyleWin)
       setSymbols(countCorrectSymbols(v,text))
     }
-
   }
 
-
-  
- useEffect( () => {
-    const interval = setInterval(() => {
-      if(isFinished) {}
+useEffect( () => {
+  const interval = setInterval(() => {
+    if(isFinished) {}
       else {
         setElapsedTime(timeElapsed => 1000 + timeElapsed)
       }
     }, 1000);
-    return () => clearInterval(interval);
+  return () => clearInterval(interval);
 }, [isFinished]);
 
 useEffect( () => {
   let nt = text.split('$').join('\n')
   let nt2 = nt.split('`').join("    ")
-
   setText(nt2)
-
 }, [text]);
-
-
 
 return(
       <div className="container mt-5 mb-5">
@@ -96,9 +96,11 @@ return(
             <Preview text={text} userInput={userInput} symbols={symbols}/>
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
              <TextareaAutosize
+              onPaste={errorHandling} 
               style = {inputStyle}
               value={userInput} 
               onChange={onUserInputChange}
+              onKeyDown={onUserInputChange}
               className="form-control p-3 mb-3"
               placeholder="Start Typing..."
             ></TextareaAutosize> 
