@@ -36,7 +36,11 @@ const TAB_EVENT = 9
     e.preventDefault();
     e.nativeEvent.stopImmediatePropagation();
   }
-
+  const errorHandling2 = (e) => {
+    e.preventDefault();
+    return "false"
+  }
+  
   const onUserInputChange = (e) => {
     if (symbols + 2 < text.length) {
       if (e.keyCode !== TAB_EVENT) {
@@ -97,6 +101,7 @@ return(
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
              <TextareaAutosize
               onPaste={errorHandling} 
+              onDragOver = {errorHandling2}
               style = {inputStyle}
               value={userInput} 
               onChange={onUserInputChange}
