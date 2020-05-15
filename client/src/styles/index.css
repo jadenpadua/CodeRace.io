@@ -35,6 +35,7 @@
  
   .btn.btn-light {
     background-color: #eda5ff;
+    color: black;
   }
 
   .form-control, .form-control:focus {
@@ -44,4 +45,25 @@
     outline-offset: 0px;
   }
 
-  
+
+nav {
+  height: 120px;
+}
+
+nav .brand-logo { 
+font-style: normal;
+font-weight: normal;
+font-size: 60px;
+line-height: 84px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #37006D;
+margin-top: 20px;
+background-color: rgba(0, 0, 0, 0) !important;
+text-decoration: none;
+}
+
+.nav-wrapper {
+  background-color: #57FED5;
+}

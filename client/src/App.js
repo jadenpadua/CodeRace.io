@@ -5,8 +5,11 @@ import ReactGA from 'react-ga';
 import TextareaAutosize from 'react-autosize-textarea';
 import Preview from './components/Preview';
 import Speed from './components/Speed';
+import Navbar from './components/Navbar';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
+import {BrowserRouter} from 'react-router-dom'
+
 
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
@@ -92,10 +95,11 @@ useEffect( () => {
 }, [text]);
 
 return(
+      <BrowserRouter>
+      <Navbar></Navbar>
       <div className="container mt-5 mb-5">
         <div className="row">
         {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
-          <h1>CodeRace.io</h1>
           <div className="col-md-6 offset-md-3">
             <Preview text={text} userInput={userInput} symbols={symbols}/>
             {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
@@ -105,7 +109,7 @@ return(
               style = {inputStyle}
               value={userInput} 
               onChange={onUserInputChange}
-              onKeyDown={onUserInputChange}
+              onKeyDown={onUserInputChange}  
               className="form-control p-3 mb-3"
               placeholder="Start Typing..."
             ></TextareaAutosize> 
@@ -116,6 +120,7 @@ return(
           </div>
         </div> 
       </div>
+      </BrowserRouter>
     );
     };
 export default App;
