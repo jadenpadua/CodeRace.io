@@ -10,7 +10,6 @@ import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSym
 import './styles/index.css'; 
 import {BrowserRouter} from 'react-router-dom'
 
-
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
   ReactGA.pageview('/homepage');
@@ -96,7 +95,8 @@ useEffect( () => {
 
 return(
       <BrowserRouter>
-      <Navbar></Navbar>
+      <Navbar>
+      </Navbar>
       <div className="container mt-5 mb-5">
         <div className="row">
         {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
