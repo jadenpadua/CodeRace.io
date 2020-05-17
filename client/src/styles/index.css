@@ -73,6 +73,8 @@ text-decoration: none;
 .btn.btn-light {
   box-shadow: none;
   font-family: monospace;
+  text-transform: none;
+  font-family: monospace;
 }
 
 .form-control.p-3.mb-3 {
