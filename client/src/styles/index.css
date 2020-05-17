@@ -1,5 +1,6 @@
 ::placeholder {
     font-size: 16px;
+    font-family: monospace;
     color: white;
   }
 
@@ -48,6 +49,7 @@
 
 nav {
   height: 120px;
+  box-shadow: none;
 }
 
 nav .brand-logo { 
@@ -66,4 +68,13 @@ text-decoration: none;
 
 .nav-wrapper {
   background-color: #57FED5;
+}
+
+.btn.btn-light {
+  box-shadow: none;
+  font-family: monospace;
+}
+
+.form-control.p-3.mb-3 {
+  font-family: monospace
 }

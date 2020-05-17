@@ -28,5 +28,3 @@ export const countCorrectSymbols = (userInput,text) => {
     return userInput.replace( ' ', '').split('').filter((s,i) => s === parsedText[i]).length;
 }
  
-
- 
