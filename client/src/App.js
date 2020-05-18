@@ -8,8 +8,9 @@ import Speed from './components/Speed';
 import Navbar from './components/Navbar';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
-import {BrowserRouter} from 'react-router-dom'
-
+import {BrowserRouter, Redirect} from 'react-router-dom'
+import home from './components/home.png'
+import car from './components/car.png'
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
   ReactGA.pageview('/homepage');
@@ -93,16 +94,31 @@ useEffect( () => {
   setText(nt2)
 }, [text]);
 
+
+
 return(
       <BrowserRouter>
       <Navbar>
       </Navbar>
       <div className="container mt-5 mb-5">
+  
         <div className="row">
+     
         {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
           <div className="col-md-6 offset-md-3">
+          <div className= "text-right">
+   
+          <Speed timeElapsed={timeElapsed} symbols={symbols}/>
+            {/* <img class = "img-responsive" src = {car} alt = "home" ></img> */}
+  
+       
+  
+       
+
+
+      </div>
             <Preview text={text} userInput={userInput} symbols={symbols}/>
-            {/* <Input userInput={userInput} onChange={onUserInputChange} /> */}
+          
              <TextareaAutosize
               onPaste={errorHandling} 
               onDragOver = {errorHandling2}
@@ -113,8 +129,8 @@ return(
               className="form-control p-3 mb-3"
               placeholder="Start Typing..."
             ></TextareaAutosize> 
-            <Speed timeElapsed={timeElapsed} symbols={symbols}/>
-            <div className="text-right">
+        
+            <div className="text-left">
               <button className="btn btn-light" onClick={onRestart}>Restart</button>
             </div>
           </div>

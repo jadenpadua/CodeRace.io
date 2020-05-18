@@ -13,7 +13,7 @@
   h1 {
     margin: auto;
     color: #37006d;
-    font-size: 65px;
+    font-size: 60px;
   }
 
 
@@ -26,6 +26,7 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
     user-select: none; /* Standard syntax */
+    font-weight: bold;
   }
 
   body {
@@ -98,12 +99,34 @@ text-decoration: none;
   text-align: Center;
 }
 img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
 }
  
 @media screen and (max-width: 768px) {
   h1{
       font-size:40px;
   }
+}
+.btn.btn-light {
+  height: 45px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+ .cpm {
+  font-weight: bold;
+  font-size: 20px;
+} 
+
+.img-responsive {
+  max-width: 10%; /* or to whatever you want here */
+  max-height: 10%; /* or to whatever you want here */
+  padding: 0px;
+ 
+
+}
+
+.speed {
+  color: red;
 }
