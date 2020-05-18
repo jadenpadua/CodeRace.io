@@ -75,7 +75,6 @@ text-decoration: none;
   box-shadow: none;
   font-family: monospace;
   text-transform: none;
-  font-family: monospace;
 }
 
 .form-control.p-3.mb-3 {
@@ -114,7 +113,7 @@ img {
   font-weight: bold;
 }
 
- .cpm {
+ .cpm{
   font-weight: bold;
   font-size: 20px;
 } 
@@ -127,6 +126,17 @@ img {
 
 }
 
-.speed {
-  color: red;
+.btn.btn-dark {
+  font-family: monospace;
+  margin-top: 5%;
+  font-weight: bold;
+  background-color: #57FED5;
+  color: black;
+  font-size: 15px;
+  height: 15%;
+  line-height: 22px;
+  box-shadow: none;
+  width: 37%;
+  padding: 1%;
+  text-transform: none;
 }

@@ -18,9 +18,8 @@ const Speed = (props) => {
         const cpm = 0
         return (
             <div className = "cpm"> 
-            <div className = "cpmText">
-            {Math.round(cpm)} cpm 
-            </div>
+          
+            {Math.round(cpm)} cpm
 
             </div> 
          ) 

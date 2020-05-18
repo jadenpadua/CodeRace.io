@@ -8,9 +8,10 @@ import Speed from './components/Speed';
 import Navbar from './components/Navbar';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
-import {BrowserRouter, Redirect} from 'react-router-dom'
+import {BrowserRouter, Redirect, Link, Switch,Route} from 'react-router-dom'
 import home from './components/home.png'
 import car from './components/car.png'
+import Suggestion from './pages/Suggestion'
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
   ReactGA.pageview('/homepage');
@@ -96,6 +97,8 @@ useEffect( () => {
 
 
 
+
+
 return(
       <BrowserRouter>
       <Navbar>
@@ -108,7 +111,7 @@ return(
           <div className="col-md-6 offset-md-3">
           <div className= "text-right">
    
-          <Speed timeElapsed={timeElapsed} symbols={symbols}/>
+          <Speed timeElapsed={timeElapsed} symbols={symbols} />
             {/* <img class = "img-responsive" src = {car} alt = "home" ></img> */}
   
        
@@ -133,6 +136,21 @@ return(
             <div className="text-left">
               <button className="btn btn-light" onClick={onRestart}>Restart</button>
             </div>
+
+
+            <div className="text-center">
+               <button className="btn btn-dark">Have a suggestion?<br/>Drop a note here!</button>
+              {/* <Link to="/suggestion"  className="btn btn-dark">Have a suggestion?<br/>Drop a note here!</Link> */}
+            </div>
+
+          {/* <div>
+            <Switch>
+              <Route exact path="/suggestion"  component={Suggestion}/>
+            </Switch>
+
+          </div> */}
+
+
           </div>
         </div> 
       </div>
