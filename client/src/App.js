@@ -28,6 +28,7 @@ const [isFinished, setisFinished] = useState(false)
 const [inputStyle, setInputStyle] = useState(inputStyleStart)
 const TAB_EVENT = 9
 
+
   const onRestart = () => {
     setText(randomProperty(content))
     setUserInput("")

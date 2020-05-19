@@ -139,4 +139,91 @@ img {
   width: 37%;
   padding: 1%;
   text-transform: none;
+  text-decoration: none;
+}
+.btn.btn-dark.focus,
+.btn.btn-dark:focus {
+  color: #57FED5;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.btn.btn-dark:hover {
+  color: #57FED5;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.btn-dark.active,
+.btn.btn-dark:active {
+  color: #57FED5;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
+}
+.btn.btn-dark.active.focus,
+.btn.btn-dark.active:focus,
+.btn.btn-dark.active:hover,
+.btn.btn-dark:active.focus,
+.btn.btn-dark:active:focus,
+.btn.btn-dark:active:hover {
+  color: #57FED5;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
+}
+
+
+
+
+
+
+.btn.btn-light.focus,
+.btn.btn-light:focus {
+  color:  #eda5ff;
+  background-color:  black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.btn.btn-light:hover {
+  color: #eda5ff;
+  background-color: black;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.btn-light.active,
+.btn.btn-light:active {
+  color:  #eda5ff;
+  background-color:  black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
+}
+.btn.btn-light.active.focus,
+.btn.btn-light.active:focus,
+.btn.btn-light.active:hover,
+.btn.btn-light:active.focus,
+.btn.btn-light:active:focus,
+.btn.btn-light:active:hover {
+  color:  #eda5ff;
+  background-color:  black;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  text-transform: none;
+  text-decoration: none;
 }
