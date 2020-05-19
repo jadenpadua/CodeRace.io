@@ -3,15 +3,14 @@
 import React, {useState, useEffect} from 'react';
 import ReactGA from 'react-ga';
 import TextareaAutosize from 'react-autosize-textarea';
-import Preview from './components/Preview';
-import Speed from './components/Speed';
-import Navbar from './components/Navbar';
+
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from './utils.js';
 import './styles/index.css'; 
 import {BrowserRouter, Redirect, Link, Switch,Route} from 'react-router-dom'
 import home from './components/home.png'
 import car from './components/car.png'
-import Suggestion from './pages/Suggestion'
+import Suggestion from './components/Suggestion'
+import Home from './components/Home'
 function initializeReactGA() {
   ReactGA.initialize('UA-166307178-2');
   ReactGA.pageview('/homepage');
@@ -102,59 +101,8 @@ useEffect( () => {
 
 return(
       <BrowserRouter>
-      <Navbar>
-      </Navbar>
-      <div className="container mt-5 mb-5">
-  
-        <div className="row">
-     
-        {/* <img src={ require('./assets/title.png') } alt="Title" /> */}
-          <div className="col-md-6 offset-md-3">
-          <div className= "text-right">
-   
-          <Speed timeElapsed={timeElapsed} symbols={symbols} />
-            {/* <img class = "img-responsive" src = {car} alt = "home" ></img> */}
-  
-       
-  
-       
-
-
-      </div>
-            <Preview text={text} userInput={userInput} symbols={symbols}/>
-          
-             <TextareaAutosize
-              onPaste={errorHandling} 
-              onDragOver = {errorHandling2}
-              style = {inputStyle}
-              value={userInput} 
-              onChange={onUserInputChange}
-              onKeyDown={onUserInputChange}  
-              className="form-control p-3 mb-3"
-              placeholder="Start Typing..."
-            ></TextareaAutosize> 
-        
-            <div className="text-left">
-              <button className="btn btn-light" onClick={onRestart}>Restart</button>
-            </div>
-
-
-            <div className="text-center">
-               <button className="btn btn-dark">Have a suggestion?<br/>Drop a note here!</button>
-              {/* <Link to="/suggestion"  className="btn btn-dark">Have a suggestion?<br/>Drop a note here!</Link> */}
-            </div>
-
-          {/* <div>
-            <Switch>
-              <Route exact path="/suggestion"  component={Suggestion}/>
-            </Switch>
-
-          </div> */}
-
-
-          </div>
-        </div> 
-      </div>
+        <Route path = "/" exact component = {Home} timeElapsed = {timeElapsed} />
+        <Route path = "/suggestion" exact component={Suggestion} />
       </BrowserRouter>
     );
     };
