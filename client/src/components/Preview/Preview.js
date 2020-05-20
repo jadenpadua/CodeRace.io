@@ -1,18 +1,16 @@
 
 import React from 'react';
-import '.././styles/index.css'; 
+import '../.././styles/index.css';
+import './styles.css' 
 
 const Preview = (props) => {
 
   if (props.symbols + 1 === props.text.length) {
-    // console.log(props.text.length)
-    // console.log(props.symbols)
     return (
       <div>You won</div>
     )
   }
   const text = props.text.split('');
-
   return (
     <div className="border rounded p-3 mb-4">
       {
@@ -27,4 +25,5 @@ const Preview = (props) => {
     </div>
   )
 }
+
 export default Preview;

@@ -1,6 +1,7 @@
 // Neccessary imports
 import React from 'react';
-import '.././styles/index.css'
+import '../.././styles/index.css'
+import './styles.css'
 // Speedf comp that takes prop from parent
 
 

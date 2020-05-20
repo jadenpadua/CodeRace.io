@@ -1,0 +1,27 @@
+::placeholder {
+    font-size: 16px;
+    font-family: monospace;
+    color: white;
+}
+
+.border.rounded.p-3.mb-4 {
+    border-radius: 200px 200px 200px 200px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 0px solid #000000;
+    background-color: #ffffff;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10+ and Edge */
+    user-select: none; /* Standard syntax */
+    font-weight: bold;
+}
+.form-control, .form-control:focus {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    outline-offset: 0px;
+  }
+  
+.form-control.p-3.mb-3 {
+    font-family: monospace
+}

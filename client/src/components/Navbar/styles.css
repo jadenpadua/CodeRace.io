@@ -1,0 +1,52 @@
+.col-2.hamburger {
+    text-align: right;
+}
+    
+.col-2.home {
+     text-align: left;
+}
+    
+   
+.col-8.logo {
+     text-align: Center;
+}
+
+nav {
+    height: 120px;
+    box-shadow: none;
+}
+
+nav .brand-logo { 
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #37006D;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0) !important;
+    text-decoration: none;
+}
+
+.nav-wrapper {
+    background-color: #57FED5;
+}
+  
+h1 {
+    margin: auto;
+    color: #37006d;
+    font-size: 60px;
+}
+  
+img {
+    margin: auto;
+    width: 30%;
+    padding: 15px;
+  }
+.img-responsive {
+    max-width: 10%;
+    max-height: 10%; 
+    padding: 0px;
+}
