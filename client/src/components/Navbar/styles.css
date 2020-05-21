@@ -28,6 +28,7 @@ nav .brand-logo {
     margin-top: 20px;
     background-color: rgba(0, 0, 0, 0) !important;
     text-decoration: none;
+    font-family: Roboto Mono;
 }
 
 .nav-wrapper {
