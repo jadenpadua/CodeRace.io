@@ -1,7 +1,27 @@
 const express = require('express');
+const mongodb = require('mongodb');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+app.use(require("cors")()) 
+app.use(require('body-parser').json())
+
+const uri = 'mongodb+srv://jaden:Jaden1234@cluster0-ppf0e.mongodb.net/test?retryWrites=true&w=majority'
+
+mongodb.MongoClient.connect(uri, (err, db) => {
+  try {
+      console.log("MongoDB Connected...")
+  } catch (err) {
+    console.error(err)
+  }
+})
+
+// base route. Responds to POST requests to the root route
+app.post("/", (req, res) => {
+  res.send("Posting data") // always responds with the string "TODO"
+});
+
+
 
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
