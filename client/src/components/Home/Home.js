@@ -36,11 +36,9 @@ const Home = (props) => {
       }
 
       const onUserInputChange = (e) => {
-
-          if (isFinished) {
-            e.preventDefault()
-          }
-
+        if (isFinished && symbols + 2 > text.length) {
+          e.preventDefault()
+        }
 
         if (symbols + 2 < text.length) {
           if (e.keyCode !== TAB_EVENT) {
@@ -69,13 +67,15 @@ const Home = (props) => {
             setUserInput(v)
           
           }
+
           const v = e.target.value;
           setisFinished(true)
           setInputStyle(inputStyleWin)
           setSymbols(countCorrectSymbols(v,text))
         
-     
+    
         }
+       
       }
     
     useEffect( () => {
