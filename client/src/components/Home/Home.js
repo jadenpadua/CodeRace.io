@@ -9,7 +9,7 @@ import '../.././styles/buttons/styles.css'
 
 const Home = (props) => {
 
-    const [text,setText] = useState("This is a test string")
+    const [text,setText] = useState(randomProperty(content))
     const [userInput,setUserInput] = useState("")
     const [symbols,setSymbols] = useState(0)
     const [timeElapsed, setElapsedTime] = useState(0)
@@ -41,7 +41,7 @@ const Home = (props) => {
             e.preventDefault()
           }
 
-          
+
         if (symbols + 2 < text.length) {
           if (e.keyCode !== TAB_EVENT) {
             const v = e.target.value;
