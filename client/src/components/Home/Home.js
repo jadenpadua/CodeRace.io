@@ -6,7 +6,8 @@ import TextareaAutosize from 'react-autosize-textarea';
 import {content, randomProperty, inputStyleStart, inputStyleWin, countCorrectSymbols,} from '../../utils.js';
 import {Link} from 'react-router-dom'
 import '../.././styles/buttons/styles.css'
-
+import './styles.css'
+import axios from 'axios'
 const Home = (props) => {
 
     const [text,setText] = useState(randomProperty(content))
@@ -77,6 +78,9 @@ const Home = (props) => {
         }
        
       }
+
+    
+    
     
     useEffect( () => {
       const interval = setInterval(() => {
@@ -94,13 +98,20 @@ const Home = (props) => {
       setText(nt2)
     }, [text]);
 
+
+
+
+
+
     return (
         <div>
           <Navbar></Navbar>
             <div className="container mt-5 mb-5">
               <div className="row">
                 <div className="col-md-6 offset-md-3">
-                  <div className= "text-right"> <Speed timeElapsed={timeElapsed} symbols={symbols} /></div>
+                  <div className= "text-right"> 
+                  <Speed timeElapsed={timeElapsed} symbols={symbols} />
+                  </div>
                   <Preview text={text} userInput={userInput} symbols={symbols}/>
                   <TextareaAutosize
                   onPaste={errorHandling} 

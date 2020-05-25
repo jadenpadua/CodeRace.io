@@ -5,12 +5,9 @@ import './styles.css'
 const Suggestion = (props) => {
 const [userInput,setUserInput] = useState("")
 
-   const submit = () => {
-      setUserInput("")
-    }
-
-
-      
+      const submit = () => {
+         setUserInput("")
+      }
    
     const onUserInputChange = (e) => {
       const v = e.target.value;
@@ -18,6 +15,73 @@ const [userInput,setUserInput] = useState("")
       console.log(userInput)
 
     }
+
+
+   //  // res for API calls
+   //  function useAsyncEndpoint(fn) {
+   //    const [res, setRes] = useState({
+   //      data: null,
+   //      pending: false,
+   //      completed: false,
+   //      error: false,
+   //    });
+   //    const [req, setReq] = useState();
+      
+   //    useEffect(() => {
+   //      setRes({
+   //        data: null,
+   //        pending: true,
+   //        completed: false,
+   //        error: false,
+   //      });
+   //      axios(req)
+   //        .then(res =>
+   //          setRes({
+   //            data: res.data,
+   //            pending: false,
+   //            error: false,
+   //            complete: true
+   //          }),
+   //        )
+   //        .catch(() =>
+   //          setRes({
+   //            data: null,
+   //            pending: false,
+   //            error: true,
+   //            complete: true
+   //          }),
+   //        );
+   //    }, [req]);
+   //    return [res, (...args) => setReq(fn(...args))];
+   // }
+   //  const todosAPI = "https://jsonplaceholder.typicode.com/todos"
+   //  function postTodoEndpoint() {
+   //    return useAsyncEndpoint(data => ({
+   //      url: todosAPI,
+   //      method: "POST",
+   //      data
+   //    }));
+
+   
+   //      const [newTodo, postNewTodo] = postTodoEndpoint();
+      
+   //    function createTodo() {
+   //      postNewTodo({
+   //          userInput,
+   //          userId: 1
+   //    });
+   // }
+        
+
+
+
+
+
+
+
+
+
+
 
     return (
       <div>
