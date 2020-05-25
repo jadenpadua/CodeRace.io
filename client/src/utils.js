@@ -20,7 +20,8 @@ export const inputStyleStart = {
 export let inputStyleWin = {
     backgroundColor: 'black',
     color: '#57fed5',
-    disabled: true
+    disabled: true,
+    userSelect: 'none',
 }
 
 export const countCorrectSymbols = (userInput,text) => {

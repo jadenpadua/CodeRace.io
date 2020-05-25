@@ -9,7 +9,7 @@ import '../.././styles/buttons/styles.css'
 
 const Home = (props) => {
 
-    const [text,setText] = useState(randomProperty(content))
+    const [text,setText] = useState("This is a test string")
     const [userInput,setUserInput] = useState("")
     const [symbols,setSymbols] = useState(0)
     const [timeElapsed, setElapsedTime] = useState(0)
@@ -34,8 +34,14 @@ const Home = (props) => {
         e.preventDefault();
         return "false"
       }
-      
+
       const onUserInputChange = (e) => {
+
+          if (isFinished) {
+            e.preventDefault()
+          }
+
+          
         if (symbols + 2 < text.length) {
           if (e.keyCode !== TAB_EVENT) {
             const v = e.target.value;
@@ -61,11 +67,14 @@ const Home = (props) => {
           if(symbols + 2 === text.length) {
             const v = e.target.value
             setUserInput(v)
+          
           }
           const v = e.target.value;
           setisFinished(true)
           setInputStyle(inputStyleWin)
           setSymbols(countCorrectSymbols(v,text))
+        
+     
         }
       }
     
