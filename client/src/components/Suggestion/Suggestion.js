@@ -15,11 +15,12 @@ const [userInput,setUserInput] = useState("")
             },
             body: JSON.stringify({ input: userInput })
           });
+          setUserInput("");
           console.log(response.json());
           } catch (err) {
             console.log(err);
           }
-         setUserInput("");
+       
       }
    
     const onUserInputChange = (e) => {
