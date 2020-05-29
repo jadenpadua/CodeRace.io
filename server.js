@@ -1,32 +1,24 @@
 const express = require('express');
-const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
+require('dotenv').config()
 app.use(require("cors")()) 
 app.use(require('body-parser').json())
-
-const uri = 'mongodb+srv://jaden:Jaden1234@cluster0-ppf0e.mongodb.net/test?retryWrites=true&w=majority'
-
-mongodb.MongoClient.connect(uri, (err, db) => {
-  try {
-      console.log("MongoDB Connected...")
-  } catch (err) {
-    console.error(err)
-  }
-})
-
-// base route. Responds to POST requests to the root route
-app.post("/", (req, res) => {
-  res.send("Posting data") // always responds with the string "TODO"
-});
-
 
 
 const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.post('/api/suggestions', (req, res) => {
+  console.log('Received suggestion: ' + req.body.input);
+  // TODO: Add req.body.input to Suggestion document, in whatever
+  // way you'll actually do it.
+  //
+  // Wahoo! - Arch Party God
+});
 
 
 if (process.env.NODE_ENV === 'production') {
