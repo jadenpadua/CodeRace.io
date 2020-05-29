@@ -1,12 +1,25 @@
 import React, {useState} from 'react';
+import Config from '../../config/env';
 import TextareaAutosize from 'react-autosize-textarea';
-import Navbar from '.././Navbar/Navbar.js';
+import Navbar from '../Navbar/Navbar.js';
 import './styles.css'
 const Suggestion = (props) => {
 const [userInput,setUserInput] = useState("")
-
-      const submit = () => {
-         setUserInput("")
+      const submit = async () => {
+         try {
+            console.log(Config.API_URL)
+            let response = await fetch(Config.API_URL + "/suggestions", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ input: userInput })
+          });
+          console.log(response.json());
+          } catch (err) {
+            console.log(err);
+          }
+         setUserInput("");
       }
    
     const onUserInputChange = (e) => {
@@ -15,69 +28,6 @@ const [userInput,setUserInput] = useState("")
       console.log(userInput)
 
     }
-
-
-   //  // res for API calls
-   //  function useAsyncEndpoint(fn) {
-   //    const [res, setRes] = useState({
-   //      data: null,
-   //      pending: false,
-   //      completed: false,
-   //      error: false,
-   //    });
-   //    const [req, setReq] = useState();
-      
-   //    useEffect(() => {
-   //      setRes({
-   //        data: null,
-   //        pending: true,
-   //        completed: false,
-   //        error: false,
-   //      });
-   //      axios(req)
-   //        .then(res =>
-   //          setRes({
-   //            data: res.data,
-   //            pending: false,
-   //            error: false,
-   //            complete: true
-   //          }),
-   //        )
-   //        .catch(() =>
-   //          setRes({
-   //            data: null,
-   //            pending: false,
-   //            error: true,
-   //            complete: true
-   //          }),
-   //        );
-   //    }, [req]);
-   //    return [res, (...args) => setReq(fn(...args))];
-   // }
-   //  const todosAPI = "https://jsonplaceholder.typicode.com/todos"
-   //  function postTodoEndpoint() {
-   //    return useAsyncEndpoint(data => ({
-   //      url: todosAPI,
-   //      method: "POST",
-   //      data
-   //    }));
-
-   
-   //      const [newTodo, postNewTodo] = postTodoEndpoint();
-      
-   //    function createTodo() {
-   //      postNewTodo({
-   //          userInput,
-   //          userId: 1
-   //    });
-   // }
-        
-
-
-
-
-
-
 
 
 
