@@ -4,5 +4,5 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 }
 
 export default {
-    API_URL: process.env.API_URL || apiurl || 'http://localhost:5000/api'
-}
+  API_URL: process.env.API_URL || apiurl || 'http://localhost:5000/api',
+};

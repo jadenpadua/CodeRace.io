@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 connectDB = () => {
-    console.log("Hello")
-}
+  console.log('Hello');
+};
 
 module.exports = connectDB;
